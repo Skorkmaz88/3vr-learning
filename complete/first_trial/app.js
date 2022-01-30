@@ -15,7 +15,7 @@ class App{
         this.clock = new THREE.Clock();
         
 		this.camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 0.1, 100 );
-		this.camera.position.set( 0, 1.6, 3 );
+		this.camera.position.set( -2, 1.6, 3 );
         
 		this.scene = new THREE.Scene();
         this.scene.background = new THREE.Color( 0xbbbbbb );
@@ -73,6 +73,7 @@ class App{
         loader.load(
             MODEL_PATH,
             function (gltf) {
+                gltf.scene.position.z  = -1;
                 self.scene.add( gltf.scene );
 
             },
